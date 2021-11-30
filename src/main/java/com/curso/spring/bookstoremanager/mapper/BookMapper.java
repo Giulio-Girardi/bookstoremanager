@@ -1,0 +1,17 @@
+package com.curso.spring.bookstoremanager.mapper;
+
+import com.curso.spring.bookstoremanager.dto.BookDTO;
+import com.curso.spring.bookstoremanager.entity.Book;
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
+
+@Mapper
+public interface BookMapper {
+
+    BookMapper INSTANCE = Mappers.getMapper(BookMapper.class);
+
+    Book toModel(BookDTO bookDTO);
+
+    BookDTO toDTO(Book book);
+
+}
